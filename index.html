@@ -1,166 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>altibo</title>
+    <title>Die verrückte Welt von Keil µVision</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            background: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Courier New', monospace;
-            overflow: hidden;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 80px;
-            padding: 40px;
-        }
-
-        .logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-part {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 25px;
-            border: 3px solid #D4AF37;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
-            transition: all 0.4s ease;
-            cursor: default;
-            gap: 5px;
-        }
-
-        .logo-part:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
-        }
-
-        .logo-text {
-            font-size: 32px;
-            font-weight: bold;
-            color: #D4AF37;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            line-height: 1;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .brand-button {
-            position: relative;
-            padding: 20px 50px;
-            background: transparent;
-            border: 2px solid #D4AF37;
-            color: #D4AF37;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .brand-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .brand-button:hover::before {
-            left: 100%;
-        }
-
-        .brand-button:hover {
-            background: rgba(212, 175, 55, 0.1);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-            transform: translateY(-3px);
-        }
-
-        .brand-button:active {
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .logo-part {
-                padding: 10px 20px;
-                gap: 3px;
-            }
-
-            .logo-text {
-                font-size: 22px;
-                letter-spacing: 2px;
-            }
-
-            .brand-button {
-                padding: 15px 35px;
-                font-size: 14px;
-                letter-spacing: 2px;
-            }
-
-            .buttons {
-                gap: 20px;
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .container {
-            animation: float 6s ease-in-out infinite;
-        }
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; margin: 0; padding: 20px; }
+        header { text-align: center; padding: 20px; background-color: #ffcc00; }
+        h1 { color: #cc0000; }
+        section { max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        ul { list-style-type: disc; padding-left: 20px; }
+        footer { text-align: center; margin-top: 20px; font-size: 0.8em; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <div class="logo-part">
-                <span class="logo-text">AL</span>
-                <span class="logo-text">TI</span>
-                <span class="logo-text">BO</span>
-            </div>
-        </div>
-
-
-    </div>
-    <!-- Test edit by Nexus on 2026-02-24 -->
+    <header>
+        <h1>Willkommen in der verrückten Programmierumgebung von Keil µVision!</h1>
+        <p>Eine satirische Hommage an die "beste" IDE für Embedded-Systeme – oder ist es ein Relikt aus der Steinzeit?</p>
+    </header>
+    <section>
+        <h2>Warum Keil µVision so "verrückt" ist</h2>
+        <p>Basierend auf echten Kritiken aus dem Internet (Foren wie Stack Overflow, Reddit und Embedded-Blogs), ist Keil µVision bekannt für seine... nun ja, "einzigartigen" Features. Hier eine satirische Zusammenfassung:</p>
+        <ul>
+            <li><strong>Das UI aus den 90ern:</strong> Es fühlt sich an, als würde man in Windows 95 programmieren. Graue Balken, winzige Icons – perfekt, wenn du Nostalgie suchst, statt Produktivität.</li>
+            <li><strong>Debugger-Drama:</strong> Der Debugger ist so unzuverlässig, dass er dich debuggt! Bugs verschwinden magisch, nur um bei der nächsten Compilation wieder aufzutauchen. "Schrödingers Bug" anyone?</li>
+            <li><strong>Lizenz-Lotterie:</strong> Bezahle ein Vermögen für Features, die in freien Tools wie VS Code mit Extensions umsonst sind. Aber hey, du bekommst exklusive ARM-Unterstützung – solange du nicht zu viele Cores hast.</li>
+            <li><strong>Performance-Party:</strong> Kompiliert langsamer als ein Schnecke auf Valium. Große Projekte? Nimm dir 'ne Pause und koche Kaffee – oder zwei.</li>
+            <li><strong>Community-Klagen:</strong> Nutzer berichten von Abstürzen, fehlenden Modernisierungen und einer Lernkurve, die steiler ist als der Mount Everest. Aber es ist "industriestandard" – weil Wechseln zu aufwendig ist!</li>
+        </ul>
+        <p>Wenn du Embedded-Programmierung liebst, aber Frustration hasst, vielleicht mal Eclipse oder VS Code ausprobieren? Aber psst, sag's nicht Keil!</p>
+    </section>
+    <footer>
+        <p>Satire © 2026 altibo.de – Quellen: Reddit, Stack Overflow, Embedded.com</p>
+    </footer>
 </body>
 </html>
