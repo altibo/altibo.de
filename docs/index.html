@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>ALTIBO | Alexander Bolz - Sacred Touch & Somatic Release</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
         }
 
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 30px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
         /* --- HERO --- */
         .hero {
@@ -112,37 +112,55 @@
 
         /* --- MOBILE OPTIMIERUNG --- */
         @media (max-width: 768px) {
-            /* Größere Basisschrift für bessere Lesbarkeit */
-            body { font-size: 1.05rem; }
+            /* 1. Grundschrift deutlich hochsetzen */
+            body { font-size: 18px; } 
 
-            /* Hero Bereich: Mehr Wumms auf kleinem Display */
-            h1 { font-size: 2.5rem !important; line-height: 1.1; }
-            .hero p { font-size: 1.2rem; }
-            .hero { height: auto; padding: 100px 20px; }
-
-            /* Logo Bild: Verhindern, dass es den Screen sprengt */
-            .logo-container img { 
-                width: 100% !important; 
-                max-width: 220px !important; 
+            /* 2. Hero-Sektion: Text muss knallen */
+            h1 { 
+                font-size: 2.8rem !important; 
+                line-height: 1.1; 
+                margin-bottom: 25px; 
+            }
+            .hero p { 
+                font-size: 1.3rem; 
+                line-height: 1.5;
+            }
+            .hero { 
+                padding: 80px 15px; 
+                height: auto; 
+                min-height: 90vh; 
             }
 
-            /* Buttons: Volle Breite auf dem Handy (leichter zu klicken) */
+            /* 3. Das Logo: Größer auf dem Handy */
+            .logo-container img { 
+                width: 80% !important; 
+                max-width: 250px !important; 
+            }
+
+            /* 4. Buttons: "Daumengerecht" und fett */
             .btn { 
                 width: 100%; 
-                max-width: 320px; 
-                padding: 18px 20px; 
-                font-size: 0.9rem; 
+                padding: 22px 20px; 
+                font-size: 1rem; 
+                border-width: 2px; /* Dickere Linie wirkt wertiger */
             }
 
-            /* Sessions: Text lesbarer machen */
-            .session-card { padding: 30px 20px; }
-            .session-card h3 { font-size: 1.6rem; }
-            
-            /* Persönliche Note: Nicht zu groß, damit es nicht bricht */
-            .personal-note { font-size: 1.3rem; padding: 0 10px; }
-            
-            /* Zitat/Testimonial */
-            blockquote { font-size: 1.2rem !important; }
+            /* 5. Sessions Grid: Karten auf volle Breite */
+            .sessions-grid { 
+                gap: 20px; 
+            }
+            .session-card { 
+                padding: 40px 25px; 
+            }
+            .session-card h3 { 
+                font-size: 2rem; 
+            }
+
+            /* 6. Zitat / Testimonial */
+            blockquote { 
+                font-size: 1.6rem !important; 
+                padding: 0 10px;
+            }
         }
 
     </style>
