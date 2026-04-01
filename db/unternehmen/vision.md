@@ -1,1 +1,0 @@
-Unternehmensausrichtung, Ziele

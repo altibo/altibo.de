@@ -3,706 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TantraSOMA Würzburg | Alexander Bolz - Entspannung und Körperarbeit</title>
-    <meta name="description" content="TantraSOMA Entspannungsmassagen in Würzburg. Achtsame Berührungen für Wohlbefinden, Stressabbau und tiefe Entspannung. Keine medizinischen oder therapeutischen Ansprüche.">
-    <!-- Google Fonts für elegantes Design -->
+    <title>ALTIBO | Alexander Bolz - Sacred Touch & Somatic Release</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* FARBPALETTE BASIS */
         :root {
-            --bg-light: #FAF9F6; /* Helles Creme/Off-White */
-            --bg-accent: #F2EFE9; /* Etwas dunkleres Beige für Sektions-Wechsel */
-            --text-main: #4A4A4A; /* Weiches Dunkelgrau statt hartem Schwarz */
-            --text-light: #7A7A7A;
-            --primary: #B08D55; /* Kupfer/Gold Ton für Akzente */
-            --primary-hover: #967642;
-            --white: #FFFFFF;
+            --bg: #1a1614; 
+            --card: #241f1c;
+            --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.2);
+            --text: #e8e2da;
+            --text-dim: #b5aaa0;
+            --whatsapp: #25D366;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.7;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 30px; }
 
-        body {
-            font-family: Lato, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-            font-size: 18px;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            line-height: 1.2;
-            color: #2C2C2C;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+        /* --- HERO --- */
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-        }
-
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
             padding: 0 20px;
         }
+        .logo-text { font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 20px; color: #fff; }
+        .hero p { font-size: 1.1rem; color: var(--text-dim); max-width: 600px; font-weight: 200; }
 
-        /* BUTTONS */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-family: Lato, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(176, 141, 85, 0.2);
-        }
-
-        .btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(176, 141, 85, 0.3);
-        }
-
-        /* HEADER */
-        header {
-            padding: 20px 0;
-            position: absolute;
-            width: 100%;
-            z-index: 100;
-            top: 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
+        /* --- INTRO / PERSÖNLICH --- */
+        .section { padding: 80px 0; }
+        .personal-note {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--text-main);
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 60px;
+            color: var(--gold);
         }
 
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            min-height: 700px;
-            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)), url('hero-bg.png');
-            background-size: cover;
-            background-position: center;
+        /* --- SESSIONS GRID --- */
+        .sessions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .session-card { 
+            background: var(--card); 
+            padding: 40px; 
+            border-top: 1px solid var(--gold); 
+            transition: transform 0.3s;
+        }
+        .session-card:hover { transform: translateY(-5px); }
+        .session-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--gold); }
+        .session-card p { font-size: 0.9rem; color: var(--text-dim); font-weight: 200; }
+
+        /* --- BUTTONS --- */
+        .btn-group { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 40px; }
+        
+        .btn {
+            text-decoration: none;
+            padding: 15px 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: 0.4s;
+            display: inline-block;
+            text-align: center;
+            min-width: 250px;
+        }
+
+        .btn-gold { border: 1px solid var(--gold); color: var(--gold); }
+        .btn-gold:hover { background: var(--gold); color: var(--bg); }
+
+        .btn-whatsapp { 
+            background-color: var(--whatsapp); 
+            color: white; 
+            border: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            position: relative;
+            gap: 10px;
         }
+        .btn-whatsapp:hover { opacity: 0.9; transform: scale(1.02); }
 
-        .hero-content {
-            max-width: 800px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
+        /* --- INFO AREA --- */
+        .info-area { text-align: center; background: #201b19; padding: 60px 0; margin-top: 60px; }
+        .info-area p { margin-bottom: 10px; font-weight: 200; }
 
-        .subline {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            color: #444;
-            font-weight: 400;
-        }
+        @media (max-width: 768px) { .sessions-grid { grid-template-columns: 1fr; } }
 
-        /* SECTIONS */
-        .section {
-            padding: 100px 0;
-        }
-
-        .intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .intro p {
-            margin-bottom: 20px;
-            font-size: 1.15rem;
-            color: #555;
-        }
-
-        /* TRENNER BILD PARALLAX */
-        .image-break {
-            height: 400px;
-            background-image: url('assets/images/separator.png');
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-            margin: 0;
-            position: relative;
-        }
-
-        .image-break::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(176, 141, 85, 0.1);
-        }
-
-        /* METHODE Authority */
-        .method {
-            background-color: var(--bg-accent);
-        }
-
-        .method-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .method-text ul {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .method-text li {
-            margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .method-text li::before {
-            content: '✧';
-            color: var(--primary);
-            font-size: 2rem;
-            position: absolute;
-            left: 0;
-            top: -8px;
-        }
-
-        /* PROFILBILD ZITAT */
-        .method-quote {
-            text-align: center;
-        }
-
-        .profile-image {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 25px auto;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .quote-box {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 4px;
-            border-left: 4px solid var(--primary);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-
-        /* ANGEBOTE */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #f0f0f0;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            border-color: var(--primary);
-        }
-
-        .service-icon {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        /* TESTIMONIAL REZENSION */
-        .testimonial-section {
-            background-color: var(--white);
-            text-align: center;
-            padding: 80px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .testimonial-box {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .testimonial-box::before {
-            content: '"';
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 8rem;
-            color: var(--bg-accent);
-            position: absolute;
-            top: -60px;
-            left: -40px;
-            z-index: 0;
-        }
-
-        .stars {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            line-height: 1.4;
-            color: #555;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            font-family: Lato, sans-serif;
-            font-weight: 700;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ABOUT PREIS */
-        .about {
-            background-color: var(--bg-accent);
-            text-align: center;
-        }
-
-        .price-box {
-            background: var(--white);
-            display: inline-block;
-            padding: 30px 50px;
-            border-radius: 8px;
-            border: 1px solid var(--primary);
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .price-highlight {
-            font-size: 1.8rem;
-            color: var(--primary);
-            font-weight: 700;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        /* KONTAKT FOOTER */
-        .contact {
-            text-align: center;
-            background-color: #2C2C2C;
-            color: #e0e0e0;
-        }
-
-        .contact h2 {
-            color: var(--bg-light);
-        }
-
-        .contact-info {
-            margin: 0 auto;
-            max-width: 620px;
-        }
-
-        .contact-card {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-            padding: 28px 24px;
-            text-align: left;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: var(--bg-light);
-            margin-bottom: 4px;
-        }
-
-        .contact-address {
-            color: #c8c8c8;
-            margin-bottom: 22px;
-        }
-
-        .contact-list {
-            display: grid;
-            gap: 14px;
-            margin-bottom: 24px;
-        }
-
-        .contact-item {
-            display: grid;
-            grid-template-columns: 115px 1fr;
-            gap: 12px;
-            align-items: baseline;
-            padding: 10px 12px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .contact-label {
-            color: #bdbdbd;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .contact-value {
-            color: var(--bg-light);
-            font-size: 1.08rem;
-            font-weight: 600;
-        }
-
-        .contact-info a {
-            color: var(--primary);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
-        }
-
-        .contact-info a:hover {
-            border-bottom-color: var(--primary);
-        }
-
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .action-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 18px;
-            border-radius: 999px;
-            border: 1px solid var(--primary);
-            color: var(--bg-light);
-            background: rgba(176, 141, 85, 0.12);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-        }
-
-        .action-link:hover {
-            background: rgba(176, 141, 85, 0.2);
-            transform: translateY(-2px);
-            border-bottom-color: var(--primary);
-        }
-
-        .action-link.email {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        .whatsapp-logo {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            fill: currentColor;
-        }
-
-        footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 0.9rem;
-            color: #888;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .method-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                padding: 25px;
-                margin: 0 15px;
-            }
-
-            .testimonial-box::before {
-                display: none;
-            }
-
-            .image-break {
-                height: 250px;
-                background-attachment: scroll;
-            }
-
-            .contact-card {
-                padding: 22px 16px;
-            }
-
-            .contact-item {
-                grid-template-columns: 1fr;
-                gap: 4px;
-            }
-
-            .contact-actions {
-                flex-direction: column;
-            }
-
-            .action-link {
-                justify-content: center;
-                width: 100%;
-            }
-        }
-
-        /* Disclaimer Styling */
-        .disclaimer {
-            background-color: #FFF8E1;
-            border: 1px solid #FFE082;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-        }
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; color: #555; }
+        footer a { color: #777; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">ALEXANDER BOLZ <span style="color: var(--primary);">TANTRA</span>SOMA</div>
-            </nav>
+
+    <header class="hero">
+        <div class="logo-text">Alexander Bolz</div>
+        <h1>Sacred Touch &<br>Somatic Release</h1>
+        <p>Ich lade dich in einen geschützten Raum ein, in dem dein Nervensystem zur Ruhe kommen kann und du Altes loslassen darfst.</p>
+        <div class="btn-group">
+            <a href="#kontakt" class="btn btn-gold">Termin anfragen</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>TantraSOMA in Würzburg<br>Wo dein Körper zur Ruhe kommt</h1>
-            <p class="subline">Entdecke achtsame Berührungen für tiefe Entspannung und Wohlbefinden. Ein sicherer Raum für deinen Körper und deine Grenzen.</p>
-            <a href="#kontakt" class="btn">Kostenloses Vorgespräch vereinbaren</a>
-        </div>
-    </section>
+    <main class="container">
+        
+        <section class="section">
+            <div class="personal-note">
+                "Berührung ist ein heiliger Raum, in dem Heilung beginnen darf."
+            </div>
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <p>Ich bin Alexander. Als Entwicklungsingenieur verstehe ich Systeme – als Begleiter im Bereich Somatic Massage verstehe ich die Sprache deines Körpers. Ich schlage die Brücke zwischen analytischer Klarheit und tiefer, achtsamer Präsenz.</p>
+            </div>
+        </section>
 
-    <!-- Problem Intro -->
-    <section class="section intro">
-        <div class="container">
-            <h2>Sehnst du dich nach mehr als nur Oberflächenentspannung?</h2>
-            <p>Im Alltag sind wir oft im Dauerstress. Der Körper speichert Anspannungen, und wir verlieren den Kontakt zu uns selbst. TantraSOMA bietet <strong>Entspannungsmassagen</strong>, die durch langsame, bewusste Berührungen und Atmung zu innerer Ruhe führen.</p>
-            <p><strong>Wichtiger Hinweis:</strong> Dies sind reine Wellness- und Entspannungsangebote. Keine medizinischen, therapeutischen oder heilenden Leistungen. Ich bin kein Heilpraktiker oder Therapeut.</p>
-            <!--<div class="disclaimer">
-                <strong>Rechtlicher Hinweis:</strong> Alle Angebote dienen ausschließlich der Entspannung und dem Wohlbefinden. Jegliche sexuelle Dienstleistungen erfordern eine separate Anmeldung gemäß ProstSchG. Kontaktieren Sie mich für Details.
-            </div> -->
-        </div>
-    </section>
-
-    <!-- Visueller Trenner Bild -->
-    <div class="image-break"></div>
-
-    <!-- Methode Authority -->
-    <section class="section method">
-        <div class="container">
-            <div class="method-grid">
-                <div class="method-text">
-                    <h2>Ein sicherer Raum für deine Entspannung</h2>
-                    <p>Meine Arbeit basiert auf der TantraSOMA-Methode – tantrische Prinzipien mit achtsamer Körperarbeit kombiniert. Es geht um <strong>Entspannung</strong>, nicht um Therapie.</p>
-                    <ul>
-                        <li><strong>Nervensystem-Regulation:</strong> Langsame Berührungen fördern tiefe Ruhe.</li>
-                        <li><strong>Trauma-Sensibilität:</strong> Respektvolle Arbeit mit deinen Grenzen.</li>
-                        <li><strong>Konsens & Grenzen:</strong> Du bestimmst den Rhythmus jeder Session.</li>
-                    </ul>
+        <section class="section" style="background-color: rgba(212, 175, 55, 0.03); padding: 100px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <span style="color: var(--gold); font-size: 1.5rem;">★ ★ ★ ★ ★</span>
+                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-top: 10px;">Atmen. Fühlen. Sein.</h2>
                 </div>
-                <!-- Profilbild Zitat -->
-                <div class="method-quote">
-                    <!-- Dein Profilbild -->
-                    <img src="assets/images/alexander-profil.jpg" alt="Alexander Bolz" class="profile-image">
-                    <div class="quote-box">
-                        „In meinen Sessions bin ich Begleiter. Es geht um deine Entspannung – in deinem Tempo.“
-                    </div>
+                
+                <blockquote style="max-width: 700px; margin: 0 auto; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; line-height: 1.6; font-style: italic; color: var(--text);">
+                    "Alex hat ein sehr feines Gespür für Nähe und respektvolle Distanz. Ich habe mich sicher, gehalten und gut begleitet gefühlt. Es entstand ein Raum, in dem ich wirklich loslassen konnte – körperlich wie emotional. Besonders die Rückenarbeit war tiefgehend und hat alte Spannungen gelöst. Ein echter Release."
+                </blockquote>
+                
+                <div style="text-align: center; margin-top: 30px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; color: var(--gold);">
+                    — Julia, 36 Jahre
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Angebote -->
-    <section class="section" id="angebote">
-        <div class="container">
-            <h2>Meine Angebote</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px auto; color: #666;">Jede Session ist ein individuelles Ritual (ca. 3 Stunden). Wir besprechen im Vorgespräch, was zu dir passt. <strong>Nur Entspannungsmassagen.</strong></p>
-            <div class="services-grid">
-                <!-- Card 1 -->
-                <div class="service-card">
-                    <div class="service-icon">✦</div>
-                    <h3>Rücken- & Ganzkörperentspannung</h3>
-                    <p>Der ideale Einstieg. Wir lösen Spannungen entlang der Wirbelsäule und bringen den Körper ins Fließen. Perfekt für tiefe Entspannung.</p>
+        <section id="sessions" class="section">
+            <h2 style="text-align: center; margin-bottom: 40px;">Die Sessions</h2>
+            <div class="sessions-grid">
+                <div class="session-card">
+                    <h3>The Foundation</h3>
+                    <p>Ideal zum Ankommen. Wir lösen Spannungen entlang der Wirbelsäule und bringen dein System wieder ins Fließen. Fokus auf Erdung und Entlastung.</p>
                 </div>
-                <!-- Card 2: Neutralisiert -->
-                <div class="service-card">
-                    <div class="service-icon">⚘</div>
-                    <h3>Frauen-Entspannung</h3>
-                    <p>Achtsame Berührungen für Wohlbefinden und Stressabbau. Ein sanfter Raum der Ruhe und Regeneration.</p>
+                <div class="session-card">
+                    <h3>Root & Release</h3>
+                    <p>Arbeit am unteren Rücken und Beckenbereich. Ein intensives Loslassen für mehr innere Freiheit und Stabilität.</p>
                 </div>
-                <!-- Card 3: Neutralisiert -->
-                <div class="service-card">
-                    <div class="service-icon">∆</div>
-                    <h3>Männer-Entspannung</h3>
-                    <p>Entspannung ohne Leistungsdruck. Der Fokus liegt auf Präsenz und innerer Ruhe.</p>
+                <div class="session-card">
+                    <h3>Deep Journey</h3>
+                    <p>Das 3-Stunden-Ritual. Wir nehmen uns die Zeit, die dein Körper braucht, um wirklich tief zu sinken. Inklusive Vorgespräch und Integration.</p>
                 </div>
-                <!-- Card 4: Neutralisiert -->
-                <div class="service-card">
-                    <div class="service-icon">◎</div>
-                    <h3>Wurzelentspannung</h3>
-                    <p>Arbeit am unteren Rücken und Beckenbereich für Erdung und tiefe Entspannung.</p>
+                <div class="session-card">
+                    <h3>Vagus Balance</h3>
+                    <p>Gezielte Regulation des Nervensystems durch sanfte, langsame Impulse. Dein Reset-Knopf für den Alltag.</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="#kontakt" class="btn">Termin anfragen</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Rezension Testimonial -->
-    <section class="section testimonial-section">
-        <div class="container">
-            <div class="testimonial-box">
-                <div class="stars">★★★★★</div>
-                <h3 style="font-family: Cormorant Garamond; color: var(--primary); margin-bottom: 15px; font-size: 1.4rem;">Atmen. Fühlen. Sein.</h3>
-                <p class="testimonial-text">
-                    "Alex hat ein sehr feines Gespür für Nähe und respektvolle Distanz. Ich habe mich sicher, gehalten und gut begleitet gefühlt. Es entstand ein Raum, in dem ich wirklich loslassen konnte – körperlich wie emotional. Ich konnte sogar weinen, was mir normalerweise schwerfällt. Besonders die Rückenarbeit war tiefgehend und hat alte Spannungen gelöst. Noch den ganzen Abend habe ich tief ausgeatmet – ein echter Release. Ich kann dieses Ritual von Herzen empfehlen."
-                </p>
-                <p class="testimonial-author">Julia, 36 Jahre</p>
+        <section id="kontakt" class="section" style="text-align: center;">
+            <h2 style="margin-bottom: 20px;">Lass uns in Kontakt treten</h2>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">Egal ob Fragen oder Terminwunsch – ich freue mich auf deine Nachricht.</p>
+            
+            <div style="font-size: 1.2rem; margin-bottom: 40px;">
+                <a href="tel:+4915562862516" style="color: #fff; text-decoration: none;">+49 15562 862516</a>
             </div>
-        </div>
-    </section>
 
-    <!-- Über Mich Preis -->
-    <section class="section about">
-        <div class="container">
-            <h2>Dein Weg zur Session</h2>
-            <p style="max-width: 700px; margin: 0 auto 30px auto;">Ich befinde mich in der fortgeschrittenen Zertifizierungsphase der <a href="https://www.tantrabyfreya.com/professional-tantra-massage-training-tantrasoma-2026-27" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 600;">TantraSOMA Ausbildung</a>. Besondere Konditionen für Entspannungssessions.</p>
-            <div class="price-box">
-                <div class="price-highlight">Kennenlern-Angebot: 120 €</div>
-                <div style="font-size: 0.9rem; color: #666; margin-top: 5px;">Dauer ca. 3 Stunden inkl. Vorgespräch & Integration</div>
-            </div>
-            <p style="font-size: 1rem; margin-top: 10px;"><strong>Standort:</strong> Reichenberg bei Würzburg</p>
-        </div>
-    </section>
+            <a href="https://wa.me/4915562862516" class="btn btn-whatsapp" style="margin: 0 auto;">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Jetzt via WhatsApp anfragen
+            </a>
+        </section>
 
-    <!-- Kontakt Footer -->
-    <section class="section contact" id="kontakt">
+    </main>
+
+    <div class="info-area">
         <div class="container">
-            <h2>Bereit für den ersten Schritt?</h2>
-            <p style="margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Du musst nicht genau wissen, was du brauchst. Ein kurzes Gespräch bringt Klarheit. Ich antworte diskret und zeitnah.</p>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <p class="contact-name">Alexander Bolz</p>
-                    <p class="contact-address">Guttenberger Str. 25, 97234 Reichenberg</p>
-                    <div class="contact-list">
-                        <div class="contact-item">
-                            <span class="contact-label">E-Mail</span>
-                            <a class="contact-value" href="mailto:kontakt@altibo.de">kontakt@altibo.de</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Handy</span>
-                            <a class="contact-value" href="tel:+4915562862516">+49 15562 862516</a>
-                        </div>
-                    </div>
-                    <div class="contact-actions">
-                        <a href="https://wa.me/4915562862516" class="action-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kontakt öffnen">
-                            <svg class="whatsapp-logo" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21h.01c5.47 0 9.91-4.45 9.91-9.92A9.9 9.9 0 0 0 12.04 2Zm5.78 14.02c-.24.67-1.41 1.24-1.95 1.32-.5.07-1.13.1-1.83-.13-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.28-5.08-4.48-.15-.2-1.21-1.61-1.21-3.07s.77-2.18 1.04-2.48c.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.45-.07.7.54.24.59.83 2.04.91 2.19.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.17-.31.38-.44.5-.15.15-.3.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.17-.2.72-.83.91-1.12.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.7-.17 1.37Z"/>
-                            </svg>
-                            <span>WhatsApp schreiben</span>
-                        </a>
-                        <a href="tel:+4915562862516" class="action-link" aria-label="Jetzt anrufen">
-                            <span>Anrufen</span>
-                        </a>
-                        <a href="mailto:kontakt@altibo.de" class="action-link email" aria-label="E-Mail senden">
-                            <span>E-Mail senden</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <p><strong>Standort:</strong> 97234 Reichenberg bei Würzburg</p>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Wellness- und Entspannungsangebot. Kein medizinischer oder therapeutischer Anspruch.</p>
         </div>
-        <footer>
-            &copy; 2026 Alexander Bolz. Alle Rechte vorbehalten.<br>
-            <a href="impressum.html" style="font-size: 0.8rem; color: #666; margin-right: 10px;">Impressum</a>
-            <a href="datenschutz.html" style="font-size: 0.8rem; color: #666;">Datenschutz</a>
-        </footer>
-    </section>
+    </div>
+
+    <footer>
+        <a href="rechtliches.html">Impressum & Datenschutz</a>
+        <p style="margin-top: 20px;">&copy; 2026 Alexander Bolz</p>
+    </footer>
+
 </body>
 </html>

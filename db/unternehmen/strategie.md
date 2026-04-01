@@ -1,1 +1,0 @@
-Strategische Richtlinien
