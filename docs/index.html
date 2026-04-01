@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     
+    <link rel="icon" type="image/svg+xml" href="logo.png">
+
     <style>
         :root {
             --bg: #1a1614; 
@@ -107,11 +109,50 @@
 
         footer { padding: 40px 0; text-align: center; font-size: 0.7rem; color: #555; }
         footer a { color: #777; text-decoration: none; margin: 0 10px; }
+
+        /* --- MOBILE OPTIMIERUNG --- */
+        @media (max-width: 768px) {
+            /* Größere Basisschrift für bessere Lesbarkeit */
+            body { font-size: 1.05rem; }
+
+            /* Hero Bereich: Mehr Wumms auf kleinem Display */
+            h1 { font-size: 2.5rem !important; line-height: 1.1; }
+            .hero p { font-size: 1.2rem; }
+            .hero { height: auto; padding: 100px 20px; }
+
+            /* Logo Bild: Verhindern, dass es den Screen sprengt */
+            .logo-container img { 
+                width: 100% !important; 
+                max-width: 220px !important; 
+            }
+
+            /* Buttons: Volle Breite auf dem Handy (leichter zu klicken) */
+            .btn { 
+                width: 100%; 
+                max-width: 320px; 
+                padding: 18px 20px; 
+                font-size: 0.9rem; 
+            }
+
+            /* Sessions: Text lesbarer machen */
+            .session-card { padding: 30px 20px; }
+            .session-card h3 { font-size: 1.6rem; }
+            
+            /* Persönliche Note: Nicht zu groß, damit es nicht bricht */
+            .personal-note { font-size: 1.3rem; padding: 0 10px; }
+            
+            /* Zitat/Testimonial */
+            blockquote { font-size: 1.2rem !important; }
+        }
+
     </style>
 </head>
 <body>
 
     <header class="hero">
+        <div class="logo-container" style="margin-bottom: 30px;">
+            <img src="logo.png" alt="ALTIBO Symbol" style="width: 150px; opacity: 0.9;">
+        </div>
         <div class="logo-text">Alexander Bolz</div>
         <h1>Sacred Touch &<br>Somatic Release</h1>
         <p>Ich lade dich ein in einen geschützten Raum, in dem dein Nervensystem zur Ruhe kommen und Altes loslassen darf.</p>
@@ -197,6 +238,9 @@
     </div>
 
     <footer>
+        <div style="margin-bottom: 20px;">
+            <img src="logo.png" alt="ALTIBO" style="width: 40px; height: 40px; opacity: 0.5; filter: grayscale(1);">
+        </div>
         <a href="rechtliches.html">Impressum & Datenschutz</a>
         <p style="margin-top: 20px;">&copy; 2026 Alexander Bolz</p>
     </footer>
