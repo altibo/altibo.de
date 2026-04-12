@@ -27,3 +27,14 @@ in Spanien aufgewachsen
 
 ## Interessen
 Energiearbeit, Prozessbegleitung, Männerarbeit, Schamanismus, Spiritualität, Musizieren
+
+## Fließtext
+Schon als Kind habe ich Selbstregulation in Form von Meditation gelernt, damals um mit meinen Wutausbrüchen oder Unruhe besser umgehen zu können.
+Bodyscan hat mich sehr oft in den Schlaf begleitet.
+Auch durch die Chi-Maschine meiner Mutter habe ich mich scho mit jungen Jahren mit meinem Energiekörper auseinandergesetzt. Damals konnte ich das alles aber nicht in Worte fassen.
+Aufgewachsen in einer Familie mit ausschließlich Ärzten, wurde ich zum schwarzen Schaf durch mein Ingenieurstudium. 
+Das betrachten von elektrischen Systemen, deren Entwicklung und Entstörung war für mich viele Jahre einer der spannendsten Inhalte in meinem Leben.
+Durch meine Frau und durch Rückenschmerzen (hier besteht keine Verbindung :)) kam ich zum Yoga. Die Erfahrungen und Verbindungen die ich dort machen könnte, führten mich auf zwei Wege, den des Tantra und den des praktizierenden Schamanismus.
+Mittlerweile sehe ich die parallelen meines Berufes als Ingenieur, den des Tantrikers und des Schamanen. Alle haben das gleiche Ziel und die Erkenntnisse der einzelnen Bereiche untersützen in den anderen Bereichen. Ein gegenseitiges befruchten.
+Nachdem ich viele Jahre mit mir gearbeitet habe, führt mein Weg nun weiter mit der Arbeit mit anderen Menschen.
+

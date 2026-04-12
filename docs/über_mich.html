@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über Mich | Alexander Bolz - ALTIBO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #1a1614; --gold: #d4af37; --text: #e8e2da; --card: #241f1c; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.8; padding: 0; margin: 0; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-weight: 300; }
+        h1 { font-size: 3rem; text-align: center; margin-bottom: 40px; }
+        h2 { font-size: 2rem; margin-top: 50px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .intro-text { font-size: 1.2rem; font-style: italic; text-align: center; margin-bottom: 60px; color: var(--text); }
+        .portrait-wrap { display: flex; justify-content: center; margin-bottom: 40px; }
+        .portrait { width: 220px; max-width: 100%; border-radius: 50%; border: 4px solid rgba(212, 175, 55, 0.22); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); }
+        .highlight { color: var(--gold); font-weight: 400; }
+        
+        .timeline { margin-top: 30px; }
+        .timeline-item { margin-bottom: 30px; padding-left: 20px; border-left: 1px solid var(--gold); }
+        .timeline-date { font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
+        .timeline-content { font-weight: 200; }
+        .timeline-note { display: block; margin-top: 8px; font-size: 0.95rem; color: #b5aaa0; font-style: italic; line-height: 1.4; }
+
+        .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .cv-section h3 { font-size: 1.4rem; margin-bottom: 15px; border-bottom: 1px dotted #444; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 10px; font-weight: 200; font-size: 0.9rem; }
+
+        .back-link { display: block; margin-top: 80px; text-align: center; color: #b5aaa0; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid #333; padding: 15px; width: fit-content; margin-left: auto; margin-right: auto; transition: 0.3s; }
+        .back-link:hover { border-color: var(--gold); color: var(--gold); }
+
+        @media (max-width: 768px) { .cv-grid { grid-template-columns: 1fr; } }
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; color: #555; }
+        footer a { color: #777; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="portrait-wrap">
+            <img src="portrait.jpg" alt="Portrait Alexander Bolz" class="portrait">
+        </div>
+        <h1>Alexander Bolz</h1>
+        <p class="intro-text">„Vom Entstören elektrischer Systeme zur Entfaltung menschlicher Potenziale.“</p>
+
+        <section>
+            <p>Aufgewachsen unter Palmen in Spanien und gereift in der Präzision Frankens, begleite ich heute Menschen auf ihrem Weg zu sich selbst. Mein Weg war kein gerader, sondern ein organischer Prozess des Verstehens – von der Materie bis zum Geist.</p>
+            
+            <p>Während mein Umfeld stark von der Medizin geprägt war, fand ich meine Leidenschaft zunächst in der Entwicklung und Entstörung komplexer elektrischer Systeme. Viele Jahre war die Arbeit mit Mechatronik und Software im Bereich der Luftfahrt und Medizintechnik mein Fokus. Doch was ich dort lernte – das Verständnis von Strömen, Widerständen und ganzheitlichen Systemen –, lässt sich eins zu eins auf den menschlichen Körper übertragen.</p>
+
+            <p>Schon als Kind lernte ich Meditation, um meine eigene Unruhe zu bändigen. Später führte mich mein Weg über das Yoga zum Tantra und zum Schamanismus. Diese Welten sind für mich keine Gegensätze. Sie befruchten sich gegenseitig. Ein Ingenieur sucht nach Lösungen, ein Tantriker nach tiefer Verbindung und ein Schamane nach Heilung der Essenz. In meiner Arbeit fließt all das zusammen.</p>
+        </section>
+
+        <h2>Mein Werdegang</h2>
+        
+        <div class="cv-grid">
+            <div class="cv-section">
+                <h3>Stationen als Ingenieur</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2011 - 2024</div>
+                        <div class="timeline-content">Entwicklungsingenieur: Sondermaschinenbau, Luft- & Raumfahrt, Defence.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Seit 2024</div>
+                        <div class="timeline-content">Entwicklungsingenieur in der Medizintechnik.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>Akademisches Fundament</h3>
+                <ul>
+                    <li><strong>2018:</strong> Master of Engineering (Maschinenbau)</li>
+                    <li><strong>2011:</strong> Bachelor of Engineering (Mechatronik)</li>
+                    <li><strong>2007:</strong> Abitur</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Aus- & Weiterbildungen</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">Professional Tantra Massage Training <span class="highlight">TantraSOMA™</span>, Jahrestraining, TANTRAWAY, Polen.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">Ausbildung zum Prozessbegleiter, einjährige Weiterbildung, Proceswerk, Niederlande.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2021</div>
+                <div class="timeline-content">Reiki 1 & 2.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">Meditationslehrer und Achtsamkeitstrainer, Die Glücksbringer, Würzburg, 150 UE.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-content">The New Tantra - Domination Workshop.</div>
+                <div class="timeline-note">Starke Polarität durch das Spiel von Dominanz und Hingabe, Präsenz und Energie.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2018</div>
+                <div class="timeline-content">The New Tantra - Men's Workshop.</div>
+                <div class="timeline-note">Intime Beziehungsgestaltung mit der femininen Energie.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2017</div>
+                <div class="timeline-content">The New Tantra - Sexual Deconditioning & Advanced Sex.</div>
+            </div>
+        </div>
+
+        <section style="margin-top: 60px; text-align: center; border-top: 1px solid #333; padding-top: 40px;">
+            <p>Heute lebe ich mit meiner Frau und meinem Kind in Reichenberg bei Würzburg. Nach 15 Jahren Ehe und vielen Jahren der Selbstarbeit freue ich mich darauf, mein Wissen und meine Präsenz als Werkzeug für deinen Prozess zur Verfügung zu stellen.</p>
+        </section>
+
+        <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
+    </div>
+
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <img src="logo.png" alt="ALTIBO" style="width: 40px; height: 40px; opacity: 0.5; filter: grayscale(1);">
+        </div>
+        <a href="rechtliches.html">Impressum & Datenschutz</a>
+        <p style="margin-top: 20px;">&copy; 2026 Alexander Bolz</p>
+    </footer>
+
+</body>
+</html>
