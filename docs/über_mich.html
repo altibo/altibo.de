@@ -1,134 +1,370 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, follow">
-    <title>Über Mich | Alexander Bolz - ALTIBO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #1a1614; --gold: #d4af37; --text: #e8e2da; --card: #241f1c; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.8; padding: 0; margin: 0; }
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-weight: 300; }
-        h1 { font-size: 3rem; text-align: center; margin-bottom: 40px; }
-        h2 { font-size: 2rem; margin-top: 50px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .intro-text { font-size: 1.2rem; font-style: italic; text-align: center; margin-bottom: 60px; color: var(--text); }
-        .portrait-wrap { display: flex; justify-content: center; margin-bottom: 40px; }
-        .portrait { width: 220px; max-width: 100%; border-radius: 50%; border: 4px solid rgba(212, 175, 55, 0.22); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); }
-        .highlight { color: var(--gold); font-weight: 400; }
-        
-        .timeline { margin-top: 30px; }
-        .timeline-item { margin-bottom: 30px; padding-left: 20px; border-left: 1px solid var(--gold); }
-        .timeline-date { font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
-        .timeline-content { font-weight: 200; }
-        .timeline-note { display: block; margin-top: 8px; font-size: 0.95rem; color: #b5aaa0; font-style: italic; line-height: 1.4; }
-
-        .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-        .cv-section h3 { font-size: 1.4rem; margin-bottom: 15px; border-bottom: 1px dotted #444; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 10px; font-weight: 200; font-size: 0.9rem; }
-
-        .back-link { display: block; margin-top: 80px; text-align: center; color: #b5aaa0; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid #333; padding: 15px; width: fit-content; margin-left: auto; margin-right: auto; transition: 0.3s; }
-        .back-link:hover { border-color: var(--gold); color: var(--gold); }
-
-        @media (max-width: 768px) { .cv-grid { grid-template-columns: 1fr; } }
-        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; color: #555; }
-        footer a { color: #777; text-decoration: none; margin: 0 10px; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, follow" />
+<title>Über mich | ALTIBO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0a0d10;
+  --bg-soft:#11161b;
+  --panel:#171d23;
+  --line:rgba(210,174,108,.18);
+  --accent:#d2ae6c;
+  --accent-strong:#f1d39a;
+  --text:#f4efe7;
+  --muted:#b8b1a7;
+  --shadow:0 28px 80px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif;
+  background:
+    radial-gradient(circle at top,#1a2128 0%,rgba(10,13,16,0) 34%),
+    linear-gradient(180deg,#0a0d10 0%,#0d1217 100%);
+  color:var(--text);
+  line-height:1.75;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1040px,calc(100% - 40px));margin:0 auto}
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(10,13,16,.8);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:76px;
+}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{width:34px;height:34px;opacity:.9}
+.brand-mark{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
+.brand-name{font-size:.92rem;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:.92rem;
+  padding:10px 14px;
+  border-radius:999px;
+  transition:.25s ease;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--text);
+  background:rgba(210,174,108,.12);
+}
+.nav-cta{
+  border:1px solid var(--line);
+  color:var(--accent-strong) !important;
+}
+.hero{
+  padding:84px 0 60px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:42px;
+  align-items:center;
+}
+.portrait-card,
+.content-card,
+.values-card,
+.mini-cta{
+  background:linear-gradient(180deg,rgba(23,29,35,.95),rgba(15,19,24,.98));
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:30px;
+  box-shadow:var(--shadow);
+}
+.portrait-card{padding:28px}
+.portrait{
+  border-radius:24px;
+  overflow:hidden;
+}
+.portrait img{
+  aspect-ratio:4/5;
+  width:100%;
+  object-fit:cover;
+}
+.eyebrow{
+  display:inline-block;
+  margin-bottom:18px;
+  color:var(--accent);
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  line-height:1.1;
+}
+h1{
+  font-size:clamp(2.8rem,6vw,4.8rem);
+  margin-bottom:18px;
+}
+.hero-copy p{
+  color:var(--muted);
+  margin-bottom:16px;
+  max-width:680px;
+}
+.hero-copy .lead{
+  color:var(--text);
+  font-size:1.15rem;
+}
+.section{padding:78px 0}
+.section.alt{
+  background:rgba(255,255,255,.02);
+  border-top:1px solid rgba(255,255,255,.03);
+  border-bottom:1px solid rgba(255,255,255,.03);
+}
+.grid{
+  display:grid;
+  gap:22px;
+}
+.two-col{grid-template-columns:1fr 1fr}
+.content-card,
+.values-card{padding:30px}
+.content-card p,
+.values-card p{color:var(--muted)}
+.content-card p + p,
+.values-card p + p{margin-top:14px}
+.section-header{
+  max-width:760px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+.section-header h2{
+  font-size:clamp(2.1rem,4.8vw,3.1rem);
+  margin-bottom:14px;
+}
+.section-header p{color:var(--muted)}
+.value-title{
+  color:var(--accent);
+  margin-bottom:10px;
+  font-size:1.38rem;
+}
+.quote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  text-align:center;
+  max-width:900px;
+  margin:0 auto 28px;
+  color:var(--accent-strong);
+}
+.mini-cta{
+  max-width:820px;
+  margin:0 auto;
+  text-align:center;
+  padding:34px;
+}
+.mini-cta p{
+  color:var(--muted);
+  max-width:620px;
+  margin:14px auto 0;
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:54px;
+  padding:0 24px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  text-decoration:none;
+  transition:.25s ease;
+  margin-top:24px;
+}
+.button-primary{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
+  color:#14110c;
+  border-color:transparent;
+}
+.button-secondary{color:var(--text)}
+.footer{padding:36px 0 110px}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:28px;
+  color:var(--muted);
+}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer a{text-decoration:none;color:var(--muted)}
+.sticky-cta{
+  position:fixed;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  z-index:30;
+  display:none;
+}
+.sticky-cta a{
+  width:100%;
+  min-height:58px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
+  color:#14110c;
+  font-weight:600;
+  box-shadow:0 22px 44px rgba(0,0,0,.34);
+}
+@media (max-width: 820px){
+  .nav-inner{
+    min-height:auto;
+    padding:14px 0;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero-grid,
+  .two-col,
+  .footer-inner{
+    grid-template-columns:1fr;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .section{padding:68px 0}
+  .sticky-cta{display:block}
+}
+</style>
 </head>
 <body>
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="ALTIBO Logo" />
+      <div>
+        <div class="brand-mark">ALTIBO</div>
+        <div class="brand-name">Alexander Bolz</div>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+      <a class="active" href="über_mich.html">Über mich</a>
+      <a href="ablauf.html">Ablauf</a>
+      <a href="rechtliches.html">Rechtliches</a>
+      <a class="nav-cta" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Erstkontakt</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="container">
-        <div class="portrait-wrap">
-            <img src="portrait.jpg" alt="Portrait Alexander Bolz" class="portrait">
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="portrait-card">
+        <div class="portrait">
+          <img src="portrait.jpg" alt="Portrait von Alexander Bolz" />
         </div>
-        <h1>Alexander Bolz</h1>
-        <p class="intro-text">„Vom Entstören elektrischer Systeme zur Entfaltung menschlicher Potenziale.“</p>
-
-        <section>
-            <p>Aufgewachsen unter Palmen in Spanien und gereift in der Präzision Frankens, begleite ich heute Menschen auf ihrem Weg zu sich selbst. Mein Weg war kein gerader, sondern ein organischer Prozess des Verstehens – von der Materie bis zum Geist.</p>
-            
-            <p>Während mein Umfeld stark von der Medizin geprägt war, fand ich meine Leidenschaft zunächst in der Entwicklung und Entstörung komplexer elektrischer Systeme. Viele Jahre war die Arbeit mit Mechatronik und Software im Bereich der Luftfahrt und Medizintechnik mein Fokus. Doch was ich dort lernte – das Verständnis von Strömen, Widerständen und ganzheitlichen Systemen –, lässt sich eins zu eins auf den menschlichen Körper übertragen.</p>
-
-            <p>Schon als Kind lernte ich Meditation, um meine eigene Unruhe zu bändigen. Später führte mich mein Weg über das Yoga zum Tantra und zum Schamanismus. Diese Welten sind für mich keine Gegensätze. Sie befruchten sich gegenseitig. Ein Ingenieur sucht nach Lösungen, ein Tantriker nach tiefer Verbindung und ein Schamane nach Heilung der Essenz. In meiner Arbeit fließt all das zusammen.</p>
-        </section>
-
-        <h2>Mein Werdegang</h2>
-        
-        <div class="cv-grid">
-            <div class="cv-section">
-                <h3>Stationen als Ingenieur</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2011 - 2024</div>
-                        <div class="timeline-content">Entwicklungsingenieur: Sondermaschinenbau, Luft- & Raumfahrt, Defence.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Seit 2024</div>
-                        <div class="timeline-content">Entwicklungsingenieur in der Medizintechnik.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cv-section">
-                <h3>Akademisches Fundament</h3>
-                <ul>
-                    <li><strong>2018:</strong> Master of Engineering (Maschinenbau)</li>
-                    <li><strong>2011:</strong> Bachelor of Engineering (Mechatronik)</li>
-                    <li><strong>2007:</strong> Abitur</li>
-                </ul>
-            </div>
-        </div>
-
-        <h2>Aus- & Weiterbildungen</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">2025</div>
-                <div class="timeline-content">Professional Tantra Massage Training <span class="highlight">TantraSOMA™</span>, Jahrestraining, TANTRAWAY, Polen.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2022</div>
-                <div class="timeline-content">Ausbildung zum Prozessbegleiter, einjährige Weiterbildung, Proceswerk, Niederlande.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2021</div>
-                <div class="timeline-content">Reiki 1 & 2.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2020</div>
-                <div class="timeline-content">Meditationslehrer und Achtsamkeitstrainer, Die Glücksbringer, Würzburg, 150 UE.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2019</div>
-                <div class="timeline-content">The New Tantra - Domination Workshop.</div>
-                <div class="timeline-note">Starke Polarität durch das Spiel von Dominanz und Hingabe, Präsenz und Energie.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2018</div>
-                <div class="timeline-content">The New Tantra - Men's Workshop.</div>
-                <div class="timeline-note">Intime Beziehungsgestaltung mit der femininen Energie.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2017</div>
-                <div class="timeline-content">The New Tantra - Sexual Deconditioning & Advanced Sex.</div>
-            </div>
-        </div>
-
-        <section style="margin-top: 60px; text-align: center; border-top: 1px solid #333; padding-top: 40px;">
-            <p>Heute lebe ich mit meiner Frau und meinem Kind in Reichenberg bei Würzburg. Nach 15 Jahren Ehe und vielen Jahren der Selbstarbeit freue ich mich darauf, mein Wissen und meine Präsenz als Werkzeug für deinen Prozess zur Verfügung zu stellen.</p>
-        </section>
-
-        <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">Über mich</span>
+        <h1>Ich halte Räume, in denen du dich wieder spüren kannst.</h1>
+        <p class="lead">Meine Arbeit verbindet Präsenz, Klarheit und ein feines Gespür für das Nervensystem.</p>
+        <p>Was Menschen bei mir oft als wohltuend erleben, ist nicht nur die Berührung selbst, sondern der Rahmen darum: ruhig, aufmerksam, ohne Druck und mit echter Achtsamkeit für Grenzen.</p>
+        <p>Ich möchte nicht beeindrucken. Ich möchte, dass du dich sicher genug fühlst, um weicher zu werden und wieder mehr bei dir anzukommen.</p>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <img src="logo.png" alt="ALTIBO" style="width: 40px; height: 40px; opacity: 0.5; filter: grayscale(1);">
-        </div>
-        <a href="rechtliches.html">Impressum & Datenschutz</a>
-        <p style="margin-top: 20px;">&copy; 2026 Alexander Bolz</p>
-    </footer>
+  <section class="section alt">
+    <div class="container">
+      <div class="quote">"Präsenz statt Technik. Klarheit statt Konzept. Körper statt Analyse."</div>
+      <div class="grid two-col">
+        <article class="content-card">
+          <h2 class="value-title">Meine Haltung</h2>
+          <p>Ich sehe meine Arbeit nicht als Methode, die etwas mit dir macht. Ich verstehe sie als Einladung, dass dein System in seinem eigenen Tempo wieder in Kontakt kommen darf.</p>
+          <p>Deshalb arbeite ich klar, respektvoll und ohne jede Form von Überredung. Was geschieht, entsteht aus dem, was in dir bereit ist.</p>
+        </article>
+        <article class="content-card">
+          <h2 class="value-title">Was dir das gibt</h2>
+          <p>Für dich bedeutet das: weniger Unsicherheit, mehr Vertrauen. Weniger Leistungsdruck, mehr Wahrnehmung. Weniger Kopf, mehr Körper.</p>
+          <p>Gerade für Menschen mit innerer Tiefe oder spiritischer Offenheit ist dieser Rahmen oft der entscheidende Unterschied.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Hintergrund</h2>
+        <p>Mein früherer beruflicher Weg ist kein Gegensatz zu meiner heutigen Arbeit, sondern ein stiller Vertrauensanker.</p>
+      </div>
+      <div class="grid two-col">
+        <article class="values-card">
+          <h3 class="value-title">Struktur und Präzision</h3>
+          <p>Ich komme ursprünglich aus der Entwicklung komplexer technischer Systeme, unter anderem im Bereich Medizintechnik. Dort habe ich gelernt, genau hinzuschauen, Zusammenhänge zu erkennen und mit Ruhe zu arbeiten.</p>
+        </article>
+        <article class="values-card">
+          <h3 class="value-title">Heute in anderer Form</h3>
+          <p>Diese Klarheit bringe ich heute nicht als Lebenslauf mit in den Raum, sondern als Qualität: präsent sein, differenziert wahrnehmen und auch in sensiblen Momenten einen stabilen Rahmen halten.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Was mich geprägt hat</h2>
+        <p>Über viele Jahre habe ich mich intensiv mit Meditation, Körperarbeit, Prozessbegleitung und verschiedenen Formen innerer Entwicklung beschäftigt.</p>
+      </div>
+      <div class="grid two-col">
+        <article class="values-card">
+          <h3 class="value-title">Innere Praxis</h3>
+          <p>Meditation begleitet mich seit meiner Kindheit. Später kamen Yoga, Energiearbeit und Ausbildungen hinzu, die mein Verständnis von Körper, Präsenz und Regulation vertieft haben.</p>
+        </article>
+        <article class="values-card">
+          <h3 class="value-title">Heute relevant</h3>
+          <p>All das nutze ich nicht, um dir ein großes Konzept zu verkaufen, sondern um dir einen Raum anzubieten, der zugleich feinfühlig, professionell und geerdet ist.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="mini-cta">
+        <span class="eyebrow">Weitergehen</span>
+        <h2>Wenn du nicht nur lesen, sondern erleben möchtest, wie sich dieser Raum anfühlt, melde dich.</h2>
+        <p>Auf der Ablauf-Seite siehst du genauer, wie eine Session aufgebaut ist und wie ich Sicherheit und Klarheit im Prozess halte.</p>
+        <a class="button button-secondary" href="ablauf.html">Ablauf ansehen</a>
+        <a class="button button-primary" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20möchte%20gern%20mehr%20über%20deine%20Arbeit%20erfahren%20und%20herausfinden,%20welche%20Session%20für%20mich%20passt.">Erstgespräch starten</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 Alexander Bolz</div>
+    <div class="footer-links">
+      <a href="index.html">Start</a>
+      <a href="ablauf.html">Ablauf</a>
+      <a href="rechtliches.html">Impressum & Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20möchte%20gern%20mehr%20über%20deine%20Arbeit%20erfahren%20und%20herausfinden,%20welche%20Session%20für%20mich%20passt.">Erstgespräch starten</a>
+</div>
 </body>
 </html>

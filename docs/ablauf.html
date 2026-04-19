@@ -1,55 +1,291 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, follow">
-    <title>Ablauf der Session | ALTIBO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #1a1614; --gold: #d4af37; --text: #e8e2da; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.8; padding: 60px 20px; }
-        .content { max-width: 700px; margin: 0 auto; }
-        h1, h2 { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-weight: 300; }
-        h1 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
-        h2 { font-size: 1.8rem; margin-top: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        p { margin-bottom: 20px; font-weight: 200; }
-        .highlight { font-style: italic; color: var(--gold); }
-        .back-link { display: block; margin-top: 60px; text-align: center; color: #b5aaa0; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid #333; padding: 15px; width: fit-content; margin-left: auto; margin-right: auto; }
-        .back-link:hover { border-color: var(--gold); color: var(--gold); }
-        .info-area { text-align: center; background: #201b19; padding: 60px 0; margin-top: 60px; }
-        .info-area p { margin-bottom: 10px; font-weight: 200; }
-        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; color: #555; }
-        footer a { color: #777; text-decoration: none; margin: 0 10px; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, follow" />
+<title>Ablauf | ALTIBO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0a0d10;
+  --panel:#171d23;
+  --line:rgba(210,174,108,.18);
+  --accent:#d2ae6c;
+  --accent-strong:#f1d39a;
+  --text:#f4efe7;
+  --muted:#b8b1a7;
+  --shadow:0 28px 80px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif;
+  background:
+    radial-gradient(circle at top,#1a2128 0%,rgba(10,13,16,0) 34%),
+    linear-gradient(180deg,#0a0d10 0%,#0d1217 100%);
+  color:var(--text);
+  line-height:1.75;
+}
+a{color:inherit}
+.container{width:min(980px,calc(100% - 40px));margin:0 auto}
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(10,13,16,.8);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:76px;
+}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{width:34px;height:34px;opacity:.9}
+.brand-mark{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
+.brand-name{font-size:.92rem;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:.92rem;
+  padding:10px 14px;
+  border-radius:999px;
+  transition:.25s ease;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--text);
+  background:rgba(210,174,108,.12);
+}
+.nav-cta{
+  border:1px solid var(--line);
+  color:var(--accent-strong) !important;
+}
+.hero{
+  padding:84px 0 44px;
+  text-align:center;
+}
+.eyebrow{
+  display:inline-block;
+  margin-bottom:18px;
+  color:var(--accent);
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  line-height:1.1;
+}
+h1{
+  font-size:clamp(2.8rem,6vw,4.7rem);
+  margin-bottom:18px;
+}
+.hero p{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+}
+.section{padding:52px 0 78px}
+.timeline{
+  display:grid;
+  gap:22px;
+}
+.step{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:20px;
+  padding:28px;
+  border-radius:28px;
+  background:linear-gradient(180deg,rgba(23,29,35,.95),rgba(15,19,24,.98));
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:var(--shadow);
+}
+.step-number{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(210,174,108,.12);
+  color:var(--accent-strong);
+  font-weight:600;
+  font-size:1.05rem;
+}
+.step p{color:var(--muted);margin-top:10px}
+.note{
+  margin-top:28px;
+  padding:24px 28px;
+  border-radius:24px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.02);
+  color:var(--muted);
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 24px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  text-decoration:none;
+  transition:.25s ease;
+}
+.button-primary{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
+  color:#14110c;
+  border-color:transparent;
+}
+.button-secondary{color:var(--text)}
+.footer{padding:36px 0 110px}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:28px;
+  color:var(--muted);
+}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer a{text-decoration:none;color:var(--muted)}
+.sticky-cta{
+  position:fixed;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  z-index:30;
+  display:none;
+}
+.sticky-cta a{
+  width:100%;
+  min-height:58px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
+  color:#14110c;
+  font-weight:600;
+  box-shadow:0 22px 44px rgba(0,0,0,.34);
+}
+@media (max-width: 820px){
+  .nav-inner{
+    min-height:auto;
+    padding:14px 0;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .step{
+    grid-template-columns:1fr;
+  }
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .sticky-cta{display:block}
+}
+</style>
 </head>
 <body>
-    <div class="content">
-        <h1>Der Ablauf deiner Session</h1>
-        
-        <p>In meiner Arbeit in Reichenberg erschaffen wir gemeinsam einen <span class="highlight">geschützten Raum</span>. Gerade bei chronischen Schmerzen oder traumatischen Erfahrungen ist das System oft im Dauerstress – hier darf es sicher landen.</p>
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="ALTIBO Logo" />
+      <div>
+        <div class="brand-mark">ALTIBO</div>
+        <div class="brand-name">Alexander Bolz</div>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+      <a href="über_mich.html">Über mich</a>
+      <a class="active" href="ablauf.html">Ablauf</a>
+      <a href="rechtliches.html">Rechtliches</a>
+      <a class="nav-cta" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Erstkontakt</a>
+    </nav>
+  </div>
+</header>
 
-        <h2>1. Den Raum halten</h2>
-        <p>In diesem Raum darf alles sein: Entspannung, Stille, aber auch Scham oder Emotionen. Ich halte diesen Rahmen für dich, damit du dich wirklich fallen lassen kannst.</p>
-
-        <h2>2. Ich als dein Werkzeug</h2>
-        <p>Du bist die Expertin für deinen Körper. Ich gebe dir am Anfang eine Anleitung, wie du mich "bedienen" kannst. Wir bleiben während der gesamten Session im Austausch über Tiefe und Intensität.</p>
-
-        <h2>3. Aktivierung deiner inneren Kraft</h2>
-        <p>In jedem von uns steckt eine große Fähigkeit zur Selbstregulation. Durch gezielte Re-Energetisierung bringen wir Energie zurück in dein System, damit dein Körper Blockaden besser loslassen kann.</p>
-
-        <h2>4. Sanfte Tiefe</h2>
-        <p>Ob durch gezielte Triggerpunkte (Root & Release) oder sanfte Klänge (Vagus Balance) – wir arbeiten uns Schicht für Schicht vor, immer in deinem Tempo.</p>
-
-        <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Ablauf</span>
+      <h1>So ist eine Session aufgebaut.</h1>
+      <p>Je klarer der Rahmen, desto leichter kann dein System loslassen. Deshalb ist der Ablauf ruhig, transparent und jederzeit nachvollziehbar.</p>
     </div>
+  </section>
 
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <img src="logo.png" alt="ALTIBO" style="width: 40px; height: 40px; opacity: 0.5; filter: grayscale(1);">
+  <section class="section">
+    <div class="container timeline">
+      <article class="step">
+        <div class="step-number">1</div>
+        <div>
+          <h2>Ankommen und Orientierung</h2>
+          <p>Zu Beginn nehmen wir uns Zeit, damit du wirklich landen kannst. Wir klären kurz, wie es dir gerade geht, was du mitbringst und worauf dein Körper heute antworten darf.</p>
         </div>
-        <a href="rechtliches.html">Impressum & Datenschutz</a>
-        <p style="margin-top: 20px;">&copy; 2026 Alexander Bolz</p>
-    </footer>
+      </article>
+      <article class="step">
+        <div class="step-number">2</div>
+        <div>
+          <h2>Ein sicherer Rahmen</h2>
+          <p>Während der gesamten Session bleiben Klarheit, Kommunikation und deine Grenzen selbstverständlich. Du musst nichts leisten und darfst jederzeit rückmelden, was sich stimmig anfühlt und was nicht.</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="step-number">3</div>
+        <div>
+          <h2>Körperarbeit in deinem Tempo</h2>
+          <p>Die Session selbst ist kein starres Programm. Ich arbeite aufmerksam mit dem, was dein System gerade zeigt: mit Spannung, Atem, Ruhe, Weite oder dem Wunsch nach mehr Erdung.</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="step-number">4</div>
+        <div>
+          <h2>Integration und Nachspüren</h2>
+          <p>Zum Abschluss bekommt dein Erleben Raum. So kann das, was sich gezeigt oder gelöst hat, innerlich ankommen, statt direkt wieder vom Alltag überlagert zu werden.</p>
+        </div>
+      </article>
+      <div class="note">
+        Gerade wenn du zum ersten Mal eine solche Arbeit in Anspruch nimmst, ist dieser klare Ablauf oft ein entscheidender Sicherheitsanker. Du bleibst jederzeit in Kontakt mit dir und behältst die Kontrolle.
+      </div>
+      <div class="actions">
+        <a class="button button-secondary" href="index.html#sessions">Sessions ansehen</a>
+        <a class="button button-primary" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20würde%20gern%20in%20einem%20kurzen%20Gespräch%20klären,%20welche%20Session%20für%20mich%20passt.">Erstgespräch starten</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 Alexander Bolz</div>
+    <div class="footer-links">
+      <a href="index.html">Start</a>
+      <a href="über_mich.html">Über mich</a>
+      <a href="rechtliches.html">Impressum & Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20würde%20gern%20in%20einem%20kurzen%20Gespräch%20klären,%20welche%20Session%20für%20mich%20passt.">Erstgespräch starten</a>
+</div>
 </body>
 </html>

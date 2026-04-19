@@ -1,272 +1,672 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="robots" content="noindex, follow">
-    <title>ALTIBO | Alexander Bolz - Sacred Touch & Somatic Release</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
-    
-    <link rel="icon" type="image/svg+xml" href="logo.png">
-
-    <style>
-        :root {
-            --bg: #1a1614; 
-            --card: #241f1c;
-            --gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.2);
-            --text: #e8e2da;
-            --text-dim: #b5aaa0;
-            --whatsapp: #25D366;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text); 
-            line-height: 1.7;
-        }
-
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-
-        /* --- HERO --- */
-        .hero {
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .logo-text { font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 20px; color: #fff; }
-        .hero p { font-size: 1.1rem; color: var(--text-dim); max-width: 600px; font-weight: 200; }
-
-        /* --- INTRO / PERSÖNLICH --- */
-        .section { padding: 80px 0; }
-        .personal-note {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            text-align: center;
-            font-style: italic;
-            margin-bottom: 60px;
-            color: var(--gold);
-        }
-
-        /* --- SESSIONS GRID --- */
-        .sessions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .session-card { 
-            background: var(--card); 
-            padding: 40px; 
-            border-top: 1px solid var(--gold); 
-            transition: transform 0.3s;
-        }
-        .session-card:hover { transform: translateY(-5px); }
-        .session-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--gold); }
-        .session-card p { font-size: 0.9rem; color: var(--text-dim); font-weight: 200; }
-
-        /* --- BUTTONS --- */
-        .btn-group { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 40px; }
-        
-        .btn {
-            text-decoration: none;
-            padding: 15px 40px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: 0.4s;
-            display: inline-block;
-            text-align: center;
-            min-width: 250px;
-        }
-
-        .btn-gold { border: 1px solid var(--gold); color: var(--gold); }
-        .btn-gold:hover { background: var(--gold); color: var(--bg); }
-
-        .btn-whatsapp { 
-            background-color: var(--whatsapp); 
-            color: white; 
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .btn-whatsapp:hover { opacity: 0.9; transform: scale(1.02); }
-
-        /* --- INFO AREA --- */
-        .info-area { text-align: center; background: #201b19; padding: 60px 0; margin-top: 60px; }
-        .info-area p { margin-bottom: 10px; font-weight: 200; }
-
-        @media (max-width: 768px) { .sessions-grid { grid-template-columns: 1fr; } }
-
-        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; color: #555; }
-        footer a { color: #777; text-decoration: none; margin: 0 10px; }
-
-        /* --- MOBILE OPTIMIERUNG --- */
-        @media (max-width: 768px) {
-            /* 1. Grundschrift deutlich hochsetzen */
-            body { font-size: 18px; } 
-
-            /* 2. Hero-Sektion: Text muss knallen */
-            h1 { 
-                font-size: 2.8rem !important; 
-                line-height: 1.1; 
-                margin-bottom: 25px; 
-            }
-            .hero p { 
-                font-size: 1.3rem; 
-                line-height: 1.5;
-            }
-            .hero { 
-                padding: 80px 15px; 
-                height: auto; 
-                min-height: 90vh; 
-            }
-
-            /* 3. Das Logo: Größer auf dem Handy */
-            .logo-container img { 
-                width: 80% !important; 
-                max-width: 250px !important; 
-            }
-
-            /* 4. Buttons: "Daumengerecht" und fett */
-            .btn { 
-                width: 100%; 
-                padding: 22px 20px; 
-                font-size: 1rem; 
-                border-width: 2px; /* Dickere Linie wirkt wertiger */
-            }
-
-            /* 5. Sessions Grid: Karten auf volle Breite */
-            .sessions-grid { 
-                gap: 20px; 
-            }
-            .session-card { 
-                padding: 40px 25px; 
-            }
-            .session-card h3 { 
-                font-size: 2rem; 
-            }
-
-            /* 6. Zitat / Testimonial */
-            blockquote { 
-                font-size: 1.6rem !important; 
-                padding: 0 10px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ALTIBO | Alexander Bolz - Sacred Touch & Somatic Release</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0a0d10;
+  --bg-soft:#11161b;
+  --panel:#171d23;
+  --panel-strong:#1d252d;
+  --line:rgba(210,174,108,.18);
+  --accent:#d2ae6c;
+  --accent-strong:#f1d39a;
+  --text:#f4efe7;
+  --muted:#b8b1a7;
+  --shadow:0 28px 80px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:
+    radial-gradient(circle at top,#1a2128 0%,rgba(10,13,16,0) 34%),
+    linear-gradient(180deg,#0a0d10 0%,#0d1217 100%);
+  color:var(--text);
+  line-height:1.7;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(10,13,16,.8);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:76px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+}
+.brand img{width:34px;height:34px;opacity:.9}
+.brand-mark{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
+.brand-name{font-size:.92rem;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:.92rem;
+  padding:10px 14px;
+  border-radius:999px;
+  transition:.25s ease;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--text);
+  background:rgba(210,174,108,.12);
+}
+.nav-cta{
+  border:1px solid var(--line);
+  color:var(--accent-strong) !important;
+}
+.hero{
+  padding:92px 0 72px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:44px;
+  align-items:end;
+}
+.eyebrow{
+  display:inline-block;
+  margin-bottom:18px;
+  color:var(--accent);
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  line-height:1.1;
+}
+h1{
+  font-size:clamp(3rem,7vw,5.4rem);
+  margin-bottom:20px;
+  max-width:11ch;
+}
+.hero-copy p{
+  max-width:620px;
+  color:var(--muted);
+  font-size:1.08rem;
+}
+.hero-copy .lead{
+  margin-top:16px;
+  color:var(--text);
+  font-size:1.18rem;
+}
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:54px;
+  padding:0 24px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  text-decoration:none;
+  transition:.25s ease;
+}
+.button-primary{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
+  color:#14110c;
+  border-color:transparent;
+  box-shadow:0 14px 40px rgba(210,174,108,.18);
+}
+.button-secondary{
+  color:var(--text);
+}
+.button:hover{transform:translateY(-1px)}
+.hero-panel{
+  background:linear-gradient(180deg,rgba(23,29,35,.96),rgba(13,17,21,.98));
+  border:1px solid var(--line);
+  border-radius:32px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+.hero-panel img{
+  width:88px;
+  margin-bottom:22px;
+  opacity:.92;
+}
+.hero-panel p{
+  color:var(--muted);
+  margin-top:12px;
+}
+.hero-panel strong{
+  color:var(--accent-strong);
+  font-weight:500;
+}
+.section{
+  padding:88px 0;
+}
+.section.alt{
+  background:rgba(255,255,255,.02);
+  border-top:1px solid rgba(255,255,255,.03);
+  border-bottom:1px solid rgba(255,255,255,.03);
+}
+.section-header{
+  max-width:760px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+.section-header h2{
+  font-size:clamp(2.2rem,4.8vw,3.3rem);
+  margin-bottom:14px;
+}
+.section-header p{
+  color:var(--muted);
+}
+.problem-grid,
+.trust-grid,
+.flow-grid,
+.testimonial-grid,
+.session-grid,
+.boundary-grid{
+  display:grid;
+  gap:22px;
+}
+.problem-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.problem-card,
+.trust-card,
+.flow-card,
+.testimonial-card,
+.session-card,
+.boundary-card{
+  background:linear-gradient(180deg,rgba(23,29,35,.95),rgba(15,19,24,.98));
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:26px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+.problem-card h3,
+.trust-card h3,
+.flow-card h3,
+.boundary-card h3{
+  color:var(--accent);
+  margin-bottom:12px;
+  font-size:1.35rem;
+}
+.problem-card p,
+.trust-card p,
+.flow-card p,
+.boundary-card p,
+.testimonial-card p,
+.session-card p{
+  color:var(--muted);
+}
+.quote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.7rem,3.1vw,2.6rem);
+  text-align:center;
+  color:var(--accent-strong);
+  max-width:900px;
+  margin:0 auto 28px;
+}
+.trust-grid{grid-template-columns:1.1fr .9fr;align-items:start}
+.trust-text{
+  max-width:640px;
+}
+.trust-text p{
+  color:var(--muted);
+  margin-bottom:16px;
+}
+.link-inline{
+  color:var(--accent-strong);
+  text-decoration:none;
+}
+.testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.testimonial-card{
+  position:relative;
+  padding:34px 32px 30px;
+  border-color:rgba(210,174,108,.12);
+  background:
+    radial-gradient(circle at top right,rgba(210,174,108,.12),transparent 36%),
+    linear-gradient(180deg,rgba(24,31,38,.98),rgba(14,18,23,.98));
+  overflow:hidden;
+}
+.testimonial-card::before{
+  content:"“";
+  position:absolute;
+  top:14px;
+  left:20px;
+  font-family:'Playfair Display',serif;
+  font-size:5rem;
+  line-height:1;
+  color:rgba(241,211,154,.14);
+}
+.testimonial-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:18px;
+  color:var(--accent);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.testimonial-kicker::before{
+  content:"";
+  width:22px;
+  height:1px;
+  background:currentColor;
+  opacity:.8;
+}
+.testimonial-card blockquote{
+  font-family:'Playfair Display',serif;
+  position:relative;
+  z-index:1;
+  font-size:1.42rem;
+  line-height:1.52;
+  color:var(--text);
+  text-wrap:pretty;
+}
+.testimonial-card .author{
+  margin-top:24px;
+  color:var(--accent);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+.testimonial-card .author span{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  letter-spacing:.08em;
+  font-size:.72rem;
+}
+.session-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+.session-card{
+  position:relative;
+  overflow:hidden;
+}
+.session-card.featured{
+  border-color:rgba(210,174,108,.36);
+  transform:translateY(-8px);
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  background:rgba(210,174,108,.13);
+  color:var(--accent-strong);
+  font-size:.73rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.session-card h3{
+  color:var(--text);
+  margin-bottom:10px;
+  font-size:1.5rem;
+}
+.session-meta{
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:var(--accent-strong);
+  font-weight:600;
+}
+.session-note{
+  margin-top:24px;
+  text-align:center;
+  color:var(--muted);
+}
+.flow-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.flow-step{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:16px;
+}
+.flow-number{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(210,174,108,.12);
+  color:var(--accent-strong);
+  font-weight:600;
+}
+.boundary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cta-box{
+  max-width:840px;
+  margin:0 auto;
+  text-align:center;
+  padding:38px;
+  border-radius:32px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(30,38,46,.95),rgba(19,24,29,.98));
+  box-shadow:var(--shadow);
+}
+.cta-box p{
+  color:var(--muted);
+  max-width:640px;
+  margin:16px auto 0;
+}
+.footer{
+  padding:36px 0 110px;
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:28px;
+  color:var(--muted);
+}
+.footer-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.footer a{
+  text-decoration:none;
+  color:var(--muted);
+}
+.sticky-cta{
+  position:fixed;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  z-index:30;
+  display:none;
+}
+.sticky-cta a{
+  width:100%;
+  min-height:58px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
+  color:#14110c;
+  font-weight:600;
+  box-shadow:0 22px 44px rgba(0,0,0,.34);
+}
+@media (max-width: 980px){
+  .hero-grid,
+  .trust-grid,
+  .problem-grid,
+  .testimonial-grid,
+  .session-grid,
+  .flow-grid,
+  .boundary-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+@media (max-width: 760px){
+  .nav-inner{
+    min-height:auto;
+    padding:14px 0;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero{padding:54px 0 56px}
+  .hero-grid,
+  .trust-grid,
+  .problem-grid,
+  .testimonial-grid,
+  .session-grid,
+  .flow-grid,
+  .boundary-grid,
+  .footer-inner{
+    grid-template-columns:1fr;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  h1{max-width:none}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .button{width:100%}
+  .session-card.featured{transform:none}
+  .section{padding:72px 0}
+  .sticky-cta{display:block}
+}
+</style>
 </head>
 <body>
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="ALTIBO Logo" />
+      <div>
+        <div class="brand-mark">ALTIBO</div>
+        <div class="brand-name">Alexander Bolz</div>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a class="active" href="index.html">Start</a>
+      <a href="über_mich.html">Über mich</a>
+      <a href="ablauf.html">Ablauf</a>
+      <a href="rechtliches.html">Rechtliches</a>
+      <a class="nav-cta" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Erstkontakt</a>
+    </nav>
+  </div>
+</header>
 
-    <header class="hero">
-        <div class="logo-container" style="margin-bottom: 30px;">
-            <img src="logo.png" alt="ALTIBO Symbol" style="width: 150px; opacity: 0.9;">
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Sacred Touch & Somatic Release</span>
+        <h1>Dein Körper weiß mehr als dein Kopf.</h1>
+        <p class="lead">Für spirituell offene Menschen, die sich nicht nur verstehen, sondern wieder wirklich spüren möchten.</p>
+        <p>Ich halte einen klaren, geschützten Raum, in dem dein Nervensystem zur Ruhe kommen darf, Anspannung weicher wird und du wieder in Kontakt mit dir selbst kommst.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Kostenloses Erstgespräch vereinbaren</a>
+          <a class="button button-secondary" href="#sessions">Sessions ansehen</a>
         </div>
-        <div class="logo-text">Alexander Bolz</div>
-        <h1>Sacred Touch &<br>Somatic Release</h1>
-        <p>Ich lade dich ein in einen geschützten Raum, in dem dein Nervensystem zur Ruhe kommen und Altes loslassen darf.</p>
-        
-        <div class="btn-group">
-            <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20hätte%20Interesse%20an%20einem%20kostenlosen%20Erstgespräch." class="btn btn-gold" style="background: var(--gold); color: var(--bg);">
-                Kostenloses Erstgespräch vereinbaren
-            </a>
-        </div>
-    </header>
-
-    <main class="container">
-        
-        <section class="section">
-            <div class="personal-note">
-                "Berührung ist ein heiliger Raum, in dem Ruhe und Veränderung möglich sind."
-            </div>
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <p>Ich bin Alexander. Mein Weg führte mich von der Präzision der Medizintechnik hin zur tiefen Intelligenz des Körpers. Heute nutze ich diese Klarheit, um einen Raum zu halten, in dem nichts analysiert werden muss, sondern alles gefühlt werden darf. Ich kombiniere die Ruhe eines erfahrenen Begleiters mit einem tiefen Verständnis für die somatischen Prozesse deines Nervensystems.</p>
-                <a href="über_mich.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Mehr über mich erfahren</a>
-        
-            </div>
-        </section>
-        <section class="section" style="background-color: rgba(212, 175, 55, 0.03); padding: 100px 0;">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <span style="color: var(--gold); font-size: 1.5rem;">★ ★ ★ ★ ★</span>
-                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-top: 10px;">Atmen. Fühlen. Sein.</h2>
-                </div>
-                
-                <blockquote style="max-width: 700px; margin: 0 auto; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; line-height: 1.6; font-style: italic; color: var(--text);">
-                    "Alex hat ein sehr feines Gespür für Nähe und respektvolle Distanz. Ich habe mich sicher, gehalten und gut begleitet gefühlt. Es entstand ein Raum, in dem ich wirklich loslassen konnte – körperlich wie emotional. Besonders die Rückenarbeit war tiefgehend und hat alte Spannungen gelöst. Ein echter Release."
-                </blockquote>
-                
-                <div style="text-align: center; margin-top: 30px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; color: var(--gold);">
-                    — Julia, 36 Jahre
-                </div>
-            </div>
-        </section>
-
-        <section id="sessions" class="section">
-            <h2 style="text-align: center; margin-bottom: 40px;">Die Sessions</h2>
-            <div class="sessions-grid">
-                <div class="session-card">
-                    <h3>The Foundation</h3>
-                    <p>Ideal zum Ankommen. Wir lösen Spannungen entlang der Wirbelsäule und bringen dein System wieder ins Fließen. Fokus auf Erdung und Entlastung.</p>
-                </div>
-                <div class="session-card">
-                    <h3>Root & Release</h3>
-                    <p>Arbeit am unteren Rücken und Beckenbereich. Ein intensives Loslassen für mehr innere Freiheit und Stabilität.</p>
-                </div>
-                <div class="session-card">
-                    <h3>Deep Journey</h3>
-                    <p>Das 3-Stunden-Ritual. Wir nehmen uns die Zeit, die dein Körper braucht, um wirklich tief zu sinken. Inklusive Vorgespräch und Integration.</p>
-                </div>
-                <div class="session-card">
-                    <h3>Vagus Balance</h3>
-                    <p>Gezielte Regulation des Nervensystems durch sanfte, langsame Impulse. Dein Reset-Knopf für den Alltag.</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="ablauf.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Mehr Details zu den Sessions erfahren</a>
-            </div>
-        </section>
-
-        <section id="kontakt" class="section" style="text-align: center;">
-            <h2 style="margin-bottom: 20px;">Lass uns in Kontakt treten</h2>
-            <p style="color: var(--text-dim); margin-bottom: 30px;">Egal ob Fragen oder Terminwunsch – ich freue mich auf deine Nachricht.</p>
-            
-            <div style="font-size: 1.2rem; margin-bottom: 20px;">
-                <a href="tel:+4915562862516" style="color: #fff; text-decoration: none;">+49 15562 862516</a>
-            </div>
-
-            <a href="https://wa.me/4915562862516" class="btn btn-whatsapp" style="margin: 0 auto;">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                Jetzt via WhatsApp anfragen
-            </a>
-        </section>
-
-    </main>
-
-    <div class="info-area">
-        <div class="container">
-            <p><strong>Standort:</strong> 97234 Reichenberg bei Würzburg</p>
-            <p style="font-size: 0.8rem; opacity: 0.6;">Wellness- und Entspannungsangebot. Kein medizinischer oder therapeutischer Anspruch.</p>
-        </div>
+      </div>
+      <aside class="hero-panel">
+        <img src="logo.png" alt="ALTIBO Symbol" />
+        <strong>Ruhig. Klar. Präsenz statt Performance.</strong>
+        <p>Kein therapeutisches Setting, keine Rollenerwartung, kein Druck. Sondern eine hochwertige, bewusst gehaltene Erfahrung, in der du dich sicher sinken lassen kannst.</p>
+      </aside>
     </div>
+  </section>
 
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <img src="logo.png" alt="ALTIBO" style="width: 40px; height: 40px; opacity: 0.5; filter: grayscale(1);">
+  <section class="section alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Vielleicht kennst du das</h2>
+        <p>Viel innere Arbeit und trotzdem das Gefühl, dass dein Körper noch nicht wirklich mitkommt.</p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card">
+          <h3>Zu viel im Kopf</h3>
+          <p>Du reflektierst, verstehst, analysierst und bist trotzdem innerlich nicht wirklich angekommen.</p>
+        </article>
+        <article class="problem-card">
+          <h3>Spannung statt Fluss</h3>
+          <p>Dein System ist wach, aber nicht weich. Entspannung bleibt oberflächlich oder hält nicht lange an.</p>
+        </article>
+        <article class="problem-card">
+          <h3>Wenig Körperkontakt</h3>
+          <p>Du funktionierst im Alltag, aber spürst dich selbst nur in Ausschnitten statt als Ganzes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="quote">"Berührung ist ein heiliger Raum, in dem Ruhe und Veränderung möglich sind."</div>
+      <div class="trust-grid">
+        <div class="trust-text">
+          <p>Ich bin Alexander. In meiner Arbeit geht es nicht darum, etwas an dir zu reparieren. Es geht darum, einen Raum zu öffnen, in dem du dich selbst wieder wahrnehmen kannst.</p>
+          <p>Ich arbeite mit Präsenz, Klarheit und einem feinen Gespür für das, was dein System gerade braucht. Mein Hintergrund gibt mir Struktur, doch im Mittelpunkt steht immer dein Erleben.</p>
+          <a class="link-inline" href="über_mich.html">Mehr über mich erfahren</a>
         </div>
-        <a href="rechtliches.html">Impressum & Datenschutz</a>
-        <p style="margin-top: 20px;">&copy; 2026 Alexander Bolz</p>
-    </footer>
+        <div class="trust-card">
+          <h3>Was meine Arbeit auszeichnet</h3>
+          <p>Feinfühligkeit ohne Unklarheit. Tiefe ohne Überforderung. Ein bewusst gehaltener Rahmen, in dem du dich sicher fühlen und zugleich weit werden darfst.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="section alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Erfahrungen von Klient:innen</h2>
+        <p>Vertrauen entsteht nicht nur durch Worte, sondern durch das, was Menschen in diesem Raum tatsächlich erleben.</p>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-kicker">Erlebte Sicherheit</div>
+          <blockquote>"Alex hat ein sehr feines Gespür für Nähe und respektvolle Distanz. Ich habe mich sicher, gehalten und gut begleitet gefühlt. Es entstand ein Raum, in dem ich wirklich loslassen konnte – körperlich wie emotional."</blockquote>
+          <div class="author">Julia, 36 Jahre<span>Loslassen, Vertrauen, Tiefe</span></div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-kicker">Spürbare Wirkung</div>
+          <blockquote>"Alex hat ein Talent für energetisches Arbeiten. Seine Feinfühligkeit und Professionalität haben mir das Vertrauen gegeben, mich auf seinen Raum einzulassen, tief in mein System einzutauchen und deutlich entspannter wieder herauszugehen."</blockquote>
+          <div class="author">Jo, 34 Jahre<span>Präsenz, Entspannung, Fluss</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sessions" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Die Sessions</h2>
+        <p>Klare Formate mit klaren Preisen. Wenn du unsicher bist, welche Session zu dir passt, klären wir das gemeinsam im Erstgespräch.</p>
+      </div>
+      <div class="session-grid">
+        <article class="session-card">
+          <div class="badge">Einstieg</div>
+          <h3>Vagus Balance</h3>
+          <p>Sanfte Regulation des Nervensystems durch langsame, beruhigende Impulse. Ideal als erster Kontakt mit meiner Arbeit.</p>
+          <div class="session-meta">60 Minuten · 95 €</div>
+        </article>
+        <article class="session-card">
+          <h3>The Foundation</h3>
+          <p>Ideal zum Ankommen. Wir lösen Spannungen entlang der Wirbelsäule und bringen dein System wieder mehr in Fluss.</p>
+          <div class="session-meta">90 Minuten · 135 €</div>
+        </article>
+        <article class="session-card featured">
+          <div class="badge">Beliebt</div>
+          <h3>Root & Release</h3>
+          <p>Arbeit am unteren Rücken und Beckenbereich. Für Menschen, die tiefer loslassen und wieder mehr innere Weite spüren möchten.</p>
+          <div class="session-meta">100 Minuten · 155 €</div>
+        </article>
+        <article class="session-card">
+          <div class="badge">Premium</div>
+          <h3>Deep Journey</h3>
+          <p>Das 3-Stunden-Ritual mit Raum für Tiefe, Vorgespräch und Integration. Wenn du dir wirklich Zeit geben möchtest.</p>
+          <div class="session-meta">3 Stunden · 320 €</div>
+        </article>
+      </div>
+      <p class="session-note">Individuelle Anpassungen innerhalb der Session sind möglich, ohne dass du vorher selbst entscheiden musst, was genau du brauchst.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>So läuft es ab</h2>
+        <p>Ein klarer Rahmen nimmt Druck raus und schafft Sicherheit. Du weißt jederzeit, was passiert und was nicht.</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-card">
+          <div class="flow-step"><span class="flow-number">1</span><h3>Ankommen</h3></div>
+          <p>Wir beginnen in Ruhe und schaffen einen geschützten Rahmen für dein Ankommen.</p>
+        </article>
+        <article class="flow-card">
+          <div class="flow-step"><span class="flow-number">2</span><h3>Gespräch</h3></div>
+          <p>Wir klären, was dich gerade bewegt und worauf dein System heute antworten darf.</p>
+        </article>
+        <article class="flow-card">
+          <div class="flow-step"><span class="flow-number">3</span><h3>Session</h3></div>
+          <p>Die Körperarbeit folgt deinem Tempo. Du bleibst in Kontakt mit dir und jederzeit in Kontrolle.</p>
+        </article>
+        <article class="flow-card">
+          <div class="flow-step"><span class="flow-number">4</span><h3>Integration</h3></div>
+          <p>Zum Abschluss bekommt dein Erleben Raum, damit die Wirkung nicht sofort wieder überdeckt wird.</p>
+        </article>
+      </div>
+      <div style="text-align:center;margin-top:30px">
+        <a class="button button-secondary" href="ablauf.html">Ablauf im Detail ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Was dich erwartet und was nicht</h2>
+        <p>Gerade bei einem sensiblen Angebot ist Klarheit ein Teil von Vertrauen.</p>
+      </div>
+      <div class="boundary-grid">
+        <article class="boundary-card">
+          <h3>Was dich erwartet</h3>
+          <p>Ein geschützter Raum, klare Kommunikation, Respekt für deine Grenzen und eine fein abgestimmte Begleitung, die sich an deinem System orientiert.</p>
+        </article>
+        <article class="boundary-card">
+          <h3>Was dich nicht erwartet</h3>
+          <p>Kein medizinischer oder therapeutischer Anspruch. Keine Erwartung, etwas leisten zu müssen. Kein Druck, etwas Bestimmtes fühlen zu sollen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="section alt">
+    <div class="container">
+      <div class="cta-box">
+        <span class="eyebrow">Erstkontakt</span>
+        <h2>Wenn du spürst, dass dein Körper Raum braucht, melde dich.</h2>
+        <p>In einem kurzen Gespräch finden wir gemeinsam heraus, welche Session für dich gerade stimmig ist. Standort: 97234 Reichenberg bei Würzburg.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:28px">
+          <a class="button button-primary" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Jetzt via WhatsApp anfragen</a>
+          <a class="button button-secondary" href="tel:+4915562862516">+49 15562 862516</a>
+        </div>
+        <p style="font-size:.92rem;margin-top:20px">Wellness- und Entspannungsangebot. Kein medizinischer oder therapeutischer Anspruch.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 Alexander Bolz</div>
+    <div class="footer-links">
+      <a href="über_mich.html">Über mich</a>
+      <a href="ablauf.html">Ablauf</a>
+      <a href="rechtliches.html">Impressum & Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Erstgespräch starten</a>
+</div>
 </body>
 </html>
