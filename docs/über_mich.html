@@ -226,30 +226,39 @@ h1{
   font-weight:600;
   box-shadow:0 22px 44px rgba(0,0,0,.34);
 }
+@media (max-width: 900px){
+  .container{width:min(100%,calc(100% - 28px))}
+  .hero-grid,
+  .two-col{grid-template-columns:1fr}
+  .hero{padding:58px 0 46px}
+  .section{padding:64px 0}
+}
 @media (max-width: 820px){
   body{font-size:17px;line-height:1.78}
   .nav-inner{
     min-height:auto;
     padding:14px 0;
     flex-direction:column;
-    align-items:flex-start;
+    align-items:stretch;
     gap:12px;
   }
   .nav-links{
-    width:calc(100% + 8px);
+    width:100%;
     gap:10px;
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    padding:2px 8px 6px 0;
-    scrollbar-width:none;
-    -webkit-overflow-scrolling:touch;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    padding:0;
   }
-  .nav-links::-webkit-scrollbar{display:none}
   .nav-links a{
-    flex:0 0 auto;
+    min-width:0;
     font-size:.98rem;
     padding:11px 16px;
-    white-space:nowrap;
+    white-space:normal;
+    text-align:center;
+    justify-content:center;
+  }
+  .nav-cta{
+    grid-column:1 / -1;
   }
   .hero-grid,
   .two-col,
@@ -290,6 +299,21 @@ h1{
   }
   .sticky-cta{display:block}
 }
+@media (max-width: 520px){
+  .container{width:min(100%,calc(100% - 22px))}
+  .nav-links{grid-template-columns:1fr}
+  .nav-cta{grid-column:auto}
+  .hero{padding:40px 0 34px}
+  .section,
+  .section.alt{padding:48px 0}
+  .portrait-card,
+  .content-card,
+  .values-card,
+  .mini-cta{
+    border-radius:22px;
+    padding:22px 18px;
+  }
+}
 </style>
 </head>
 <body>
@@ -306,7 +330,6 @@ h1{
       <a href="index.html">Start</a>
       <a class="active" href="über_mich.html">Über mich</a>
       <a href="ablauf.html">Ablauf</a>
-      <a href="rechtliches.html">Rechtliches</a>
       <a class="nav-cta" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Erstkontakt</a>
     </nav>
   </div>
