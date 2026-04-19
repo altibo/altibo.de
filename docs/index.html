@@ -424,13 +424,32 @@ h1{
   }
 }
 @media (max-width: 760px){
+  body{font-size:17px;line-height:1.75}
   .nav-inner{
     min-height:auto;
     padding:14px 0;
     flex-direction:column;
     align-items:flex-start;
+    gap:12px;
   }
-  .hero{padding:54px 0 56px}
+  .nav-links{
+    width:calc(100% + 8px);
+    gap:10px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    padding:2px 8px 6px 0;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{
+    flex:0 0 auto;
+    font-size:.98rem;
+    padding:11px 16px;
+    white-space:nowrap;
+  }
+  .hero{padding:46px 0 44px}
+  .eyebrow{font-size:.9rem}
   .hero-grid,
   .trust-grid,
   .problem-grid,
@@ -443,11 +462,51 @@ h1{
     flex-direction:column;
     align-items:flex-start;
   }
-  h1{max-width:none}
+  h1{max-width:none;font-size:clamp(3rem,11vw,4.2rem)}
+  h2{font-size:clamp(2.2rem,9vw,3rem)}
+  h3{font-size:1.55rem}
+  p,
+  .hero-copy p,
+  .section-header p,
+  .problem-card p,
+  .trust-card p,
+  .trust-text p,
+  .flow-card p,
+  .boundary-card p,
+  .session-card p,
+  .session-note,
+  .cta-box p{font-size:1.06rem}
+  .quote{font-size:2rem;line-height:1.3}
+  .problem-card,
+  .trust-card,
+  .flow-card,
+  .testimonial-card,
+  .session-card,
+  .boundary-card,
+  .cta-box{padding:26px 22px}
+  .testimonial-card blockquote{font-size:1.55rem;line-height:1.5}
+  .testimonial-card .author{font-size:.9rem}
+  .testimonial-card .author span,
+  .testimonial-kicker,
+  .badge{font-size:.8rem}
+  .session-meta{font-size:1.08rem}
+  .flow-number{width:42px;height:42px;font-size:1.05rem}
   .hero-actions{flex-direction:column;align-items:stretch}
   .button{width:100%}
   .session-card.featured{transform:none}
-  .section{padding:72px 0}
+  .section{padding:58px 0}
+  .section.alt{padding:60px 0}
+  .footer{padding:28px 0 98px}
+  .sticky-cta{
+    left:14px;
+    right:14px;
+    bottom:calc(env(safe-area-inset-bottom,0px) + 12px);
+  }
+  .sticky-cta a{
+    min-height:54px;
+    font-size:.98rem;
+    letter-spacing:.01em;
+  }
   .sticky-cta{display:block}
 }
 </style>
